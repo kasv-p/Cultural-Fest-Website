@@ -1,43 +1,11 @@
-@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap");
-
-:root {
-  --softRed: hsl(14, 88%, 65%);
-  --veryDarkGrayBlue: hsl(237, 12%, 33%);
-  --darkGrayBlue: hsl(240, 6%, 50%);
-  --lightGrayBlue: hsl(240, 5%, 91%);
-  --fontSize: 12px;
-}
-*,
-*:before,
-*:after {
-  box-sizing: border-box;
-}
-
-html {
-  font-size: var(--fontSize);
-}
-
-body {
+.wrapper {
   margin: 0;
-  font-family: "Poppins", sans-serif;
-  height: 100vh;
-  width: 100vw;
-  background: linear-gradient(hsl(273, 75%, 66%), hsl(240, 73%, 65%));
+  background: white;
   display: grid;
   justify-content: center;
   align-content: center;
-}
-
-.wrapper {
-  background: white;
-  border-radius: 30px;
-  height: 509px;
-  width: 920px;
-  display: grid;
-  grid-template-columns: 400px 1fr;
-  grid-gap: 6rem;
-  background-repeat: no-repeat;
-  background-position: 1260% 65%;
+  height: 100vh;
+  width: 100vw;
 }
 
 .question-answer__accordion > .answer {
@@ -47,7 +15,9 @@ body {
 .active > .answer {
   display: block;
   padding-bottom: 1.3rem;
+  font-size: 16px;
   color: var(--darkGrayBlue);
+  width: 800px;
 }
 
 .active img {
@@ -57,8 +27,8 @@ body {
 
 .accordion__wrapper {
   margin-top: 65px;
-
   display: flex;
+  font-size: 12px;
   flex-direction: column;
 }
 
@@ -69,7 +39,7 @@ body {
 }
 
 .question-answer__accordion {
-  width: 350px;
+  width: 800px;
   border-bottom: 1px solid #e8e8ea;
 }
 .title__accordion {
@@ -89,10 +59,6 @@ body {
   justify-content: space-between;
   cursor: pointer;
   transition: 0.4s;
-}
-
-.active h3 {
-  font-weight: 700;
 }
 
 .question img {
@@ -115,19 +81,21 @@ body {
   left: -25%;
 }
 
-@media (max-width: 700px) {
+@media (max-width: 900px) {
   .wrapper {
-    width: 350px;
-    grid-template-columns: 1fr;
-    grid-template-rows: 100px 1fr;
-    grid-gap: 0.5rem;
-    position: relative;
-    padding: 1rem;
-    height: 530px;
+    background: white;
+    display: grid;
+    justify-content: center;
+    align-content: center;
+    height: 100vh;
+    width: 100vw;
   }
   .image__wrapper {
     background-repeat: no-repeat;
     background-position: center 590%;
+  }
+  .active > .answer {
+    width: 90%;
   }
 
   .image__wrapper_inner {
@@ -147,7 +115,9 @@ body {
     margin-top: 0px;
   }
   .question-answer__accordion {
-    width: 100%;
+    width: 90%;
+    margin-left: 5%;
+    margin-right: 5%;
   }
   .title__accordion {
     text-align: center;
