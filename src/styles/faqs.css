@@ -95,7 +95,7 @@
     background-position: center 590%;
   }
   .active > .answer {
-    width: 90%;
+    width: 400px;
   }
 
   .image__wrapper_inner {
@@ -121,5 +121,10 @@
   }
   .title__accordion {
     text-align: center;
+  }
+  @media (max-width: 400px) {
+    .active > .answer {
+      width: 90%; /* Width for screens less than 200px (adjust as needed) */
+    }
   }
 }
