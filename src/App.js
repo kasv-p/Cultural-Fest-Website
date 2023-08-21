@@ -1,11 +1,15 @@
+import '@fortawesome/fontawesome-free/css/all.css';
 import "./App.css";
-import NavBar from "./components/NavBar";
 import Faqs from "./components/Faqs";
+import Footer from "./components/Footer";
+import NavBar from "./components/NavBar";
+
 function App() {
   return (
     <div className="App">
       <NavBar />
       <Faqs />
+      <Footer/>
     </div>
   );
 }
