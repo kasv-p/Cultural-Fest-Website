@@ -30,8 +30,8 @@ label.logo {
   text-transform: uppercase;
   text-decoration: none;
 }
-a.active,
-a:hover {
+.navclass a.active,
+.navclass a:hover {
   background: #20312e;
   transition: 0.5s;
 }
@@ -63,7 +63,7 @@ a:hover {
   .checkbtn {
     display: block;
   }
-  ul {
+  .navclass ul {
     position: fixed;
     width: 100%;
     height: 100vh;
@@ -82,8 +82,8 @@ a:hover {
     font-size: 20px;
     text-decoration: none;
   }
-  a:hover,
-  a.active {
+  .navclass a:hover,
+  .navclass a.active {
     background: none;
   }
   #check:checked ~ ul {
