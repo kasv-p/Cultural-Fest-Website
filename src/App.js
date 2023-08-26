@@ -1,4 +1,3 @@
-import '@fortawesome/fontawesome-free/css/all.css';
 import "./App.css";
 import Faqs from "./components/Faqs";
 import Footer from "./components/Footer";
