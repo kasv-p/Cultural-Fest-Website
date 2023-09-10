@@ -1,18 +1,34 @@
-/* .scroll-to-top {
+.scroll-to-top-button {
     position: fixed;
     bottom: 20px;
     right: 20px;
-    background-color: #333;
-    color: black;
-    border: none;
-    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.2);
+    color: #333;;
     padding: 10px;
-    font-size: 18px;
+    display: flex;
+    align-items: center;
     cursor: pointer;
-    display: none;
-    z-index: relative;
-}
-
-.scroll-to-top:hover {
-    background-color: #555;
-} */
+    border: 1px solid #333;
+    border-radius: 10px;
+    outline: none;
+    opacity: 0;
+    transition: opacity 0.3s, transform 0.3s;
+    backdrop-filter: blur(5px);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    }
+    
+    .scroll-to-top-button.visible {
+    opacity: 1;
+    }
+    
+    .copyright {
+    flex: 1;
+    text-align: center;
+    padding: 5px;
+    }
+    
+    .scroll-icon {
+    flex: 1;
+    text-align: right;
+    padding: 5px;
+    }

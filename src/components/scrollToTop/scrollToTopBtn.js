@@ -1,45 +1,36 @@
-// import React, { Component } from 'react';
-// import '../../styles/scrollToTop.css';
+import React, { useEffect, useState } from 'react';
+import '../../styles/scrollToTop.css';
 
-// class scrollToTopBtn extends Component{
-//     constructor(props){
-//         super(props);
-//         this.state = {
-//             showScroll: false,
-//         };
-//     }
+const ScrollToTopBtn = () => {
+    const [isVisible, setIsVisible] = useState(false);
 
-//     componentDidMount(){
-//         window.addEventListener('scroll', this.checkScrollTop);
-//     }
+    const handleScroll = () => {
+    if (window.scrollY > 300) {
+        setIsVisible(true);
+    } else {
+        setIsVisible(false);
+    }
+    };
 
-//     componentWillUnmount(){
-//         window.removeEventListener('scroll', this.checkScrollTop);
-//     }
+    const scrollToTop = () => {
+    window.scrollTo({
+        top: 0,
+        behavior: 'smooth',
+    });
+    };
 
-//     checkScrollTop = () => {
-//         if(!this.state.showScroll && window.pageYOffset >400){
-//             this.setState({showScroll: true});
-//         } else if(this.state.showScroll && window.pageYOffset <= 400){
-//             this.setState({showScroll: false});
-//         }
-//     };
+    useEffect(() => {
+    window.addEventListener('scroll', handleScroll);
+    return () => {
+        window.removeEventListener('scroll', handleScroll);
+    };
+    }, []);
 
-//     scrollToTop = () => {
-//         window.scrollTo({top: 0, behavior: 'smooth'});
-//     };
+    return (
+    <div className={`scroll-to-top-button ${isVisible ? 'visible' : ''}`} onClick={scrollToTop}>
+        <div className="scroll-icon">↑</div>
+    </div>
+    );
+};
 
-//     render(){
-//         return (
-//             <button 
-//                 className='scroll-to-top'
-//                 onClick={this.scrollToTop}
-//                 style={{display: this.state.showScroll? 'block': 'none'}}
-//             >
-//                 &#8679;
-//             </button>
-//         );
-//     }
-// }
-
-// export default scrollToTopBtn;
+export default ScrollToTopBtn;
