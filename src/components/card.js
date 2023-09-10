@@ -2,23 +2,31 @@ import "./../styles/card.css";
 import React from "react";
 
 const Card = (props) => {
-  const { imageUrl, title, date, venue, description, reviewLink, register } =
-    props;
+  const {
+    imageUrl,
+    title,
+    date,
+    month,
+    venue,
+    description,
+    reviewLink,
+    register,
+  } = props;
 
   return (
     <div className="card">
       <div className="card_left">
         <img src={imageUrl} alt={title} className="card_left_image" />
-        <div className="card_left_date">23</div>
-        <div className="card_left_month">January</div>
+        <div className="card_left_date">{date}</div>
+        <div className="card_left_month">{month}</div>
       </div>
       <div className="card_right">
         <h1>{title}</h1>
         <div className="card_right_details">
           <ul>
-            <li>{date}</li>
             <li>{venue}</li>
           </ul>
+          <br />
         </div>
         <div className="card_right_description">
           <p>{description}</p>

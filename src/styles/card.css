@@ -17,7 +17,7 @@
 
 .card_left {
   width: min-content;
-  height: 400px;
+  height: 600px;
   max-width: 320px;
   float: none;
   position: relative;
@@ -29,6 +29,19 @@
     height: auto;
     border-radius: 10px 0 0 10px;
   }
+}
+
+.card_left_date {
+  font-size: 4.5rem;
+  color: rgb(176, 175, 175);
+  font-weight: 900;
+  padding-top: 10px;
+}
+
+.card_left_month {
+  font-size: 2.8rem;
+  color: rgb(176, 175, 175);
+  font-weight: 900;
 }
 
 .card_right {
@@ -65,7 +78,7 @@
   color: #e3e3e3;
   font-family: "Montserrat", sans-serif;
   font-weight: 400;
-  font-size: 14px;
+  font-size: 18px;
   padding: 0 40px 0 0;
 }
 
@@ -129,7 +142,7 @@
   .card {
     max-width: 600px;
     box-shadow: none;
-    max-height: 700px; /*should change accordingly */
+    /* max-height: 700px;  */
     width: calc(100% - 80px);
     flex-direction: column;
     /* margin: 30px auto; */
