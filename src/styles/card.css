@@ -3,13 +3,14 @@
 }
 
 .card {
+  padding: 0 2rem;
   max-width: 800px;
-  height: 100%;
+  height: auto;
   width: 100%;
-  max-height: 400px;
-  background: transparent;
-  margin: 40px auto;
-  border-radius: 10px;
+  /* max-height: 400px; */
+  background: black;
+  margin: 8rem auto;
+  /* border-radius: 10px; */
   box-shadow: 0px 20px 30px 3px rgba(0, 0, 0, 0.55);
   display: flex;
 }
@@ -19,6 +20,8 @@
   height: 400px;
   max-width: 320px;
   float: none;
+  position: relative;
+  top: -2rem;
   overflow: hidden;
   img {
     width: 100%;
@@ -33,7 +36,7 @@
   max-width: 480px;
   float: none;
   background: #000000;
-  height: 400px;
+  height: min-content; /* should change accordingly */
   /* border-radius: 0 10px 10px 0; */
   display: flex;
   flex-direction: column;
@@ -67,8 +70,8 @@
 }
 
 .card_right_description {
-  max-height: 150px;
-  overflow: scroll;
+  /* max-height: 150px; */
+  /* overflow: scroll; */
 }
 .card_right_description p {
   color: white;
@@ -78,6 +81,10 @@
   letter-spacing: 1px;
   margin: 10px 0 10px 0;
   line-height: 20px;
+}
+
+.card_right_knowmore {
+  padding-bottom: 1rem;
 }
 
 .card_right_knowmore a {
@@ -91,7 +98,7 @@
 }
 
 .card_right_button {
-  padding: 0 0 20px 40px;
+  margin: 20px 0 20px 40px;
 }
 
 .card_right_button a {
@@ -125,7 +132,7 @@
     max-height: 700px; /*should change accordingly */
     width: calc(100% - 80px);
     flex-direction: column;
-    margin: 30px auto;
+    /* margin: 30px auto; */
 
     align-items: center;
   }
@@ -143,7 +150,7 @@
     height: max-content;
     max-width: none;
     max-height: none;
-    border-radius: 10px 0 0 10px;
+    /* border-radius: 10px 0 0 10px; */
     object-fit: contain;
   }
 

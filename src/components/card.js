@@ -8,7 +8,9 @@ const Card = (props) => {
   return (
     <div className="card">
       <div className="card_left">
-        <img src={imageUrl} alt={title} className="card_left_image"/>
+        <img src={imageUrl} alt={title} className="card_left_image" />
+        <div className="card_left_date">23</div>
+        <div className="card_left_month">January</div>
       </div>
       <div className="card_right">
         <h1>{title}</h1>
@@ -21,7 +23,7 @@ const Card = (props) => {
         <div className="card_right_description">
           <p>{description}</p>
         </div>
-        <div className="card_right_knowmore">
+        {/* <div className="card_right_knowmore">
           <a
             href="https://youtu.be/dQw4w9WgXcQ"
             target="_blank"
@@ -29,7 +31,7 @@ const Card = (props) => {
           >
             Know more
           </a>
-        </div>
+        </div> */}
         <div className="card_right_button">
           <a href={register} target="_blank" rel="noopener noreferrer">
             REGISTER
