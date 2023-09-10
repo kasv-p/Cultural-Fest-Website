@@ -17,7 +17,7 @@
 
 .card_left {
   width: min-content;
-  height: 600px;
+  height: 550px;
   max-width: 320px;
   float: none;
   position: relative;
@@ -42,6 +42,12 @@
   font-size: 2.8rem;
   color: rgb(176, 175, 175);
   font-weight: 900;
+}
+
+.card_left_time {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
 }
 
 .card_right {
@@ -82,10 +88,6 @@
   padding: 0 40px 0 0;
 }
 
-.card_right_description {
-  /* max-height: 150px; */
-  /* overflow: scroll; */
-}
 .card_right_description p {
   color: white;
   font-family: "Montserrat", sans-serif;
@@ -94,6 +96,8 @@
   letter-spacing: 1px;
   margin: 10px 0 10px 0;
   line-height: 20px;
+  text-align: justify;
+  text-justify: inter-word;
 }
 
 .card_right_knowmore {
@@ -135,9 +139,14 @@
   background-repeat: no-repeat;
   background-position: left center;
   cursor: pointer;
-  transition: all 0.5s;
+  transition: all 0.5s ease-out;
 }
 
+.card:hover {
+  box-shadow: 0px 20px 30px 3px rgba(0, 0, 0, 0.55);
+  transform: scale(1.02);
+  transition: all 0.5s;
+}
 @media (max-width: 810px) {
   .card {
     max-width: 600px;
