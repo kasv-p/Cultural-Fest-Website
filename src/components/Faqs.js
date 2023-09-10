@@ -1,72 +1,46 @@
-import React, { useState } from "react";
+import React from 'react';
+
+import { Collapse, Space } from 'antd';
+import { PlusOutlined, MinusOutlined } from '@ant-design/icons';
 import "../styles/faqs.css";
-import arrowImage from "../assets/images/icon-arrow-down.svg";
+
+const { Panel } = Collapse;
 
 function Faqs() {
-  const [activeQuestion, setActiveQuestion] = useState(null);
-  const data = [
-    {
-      question: "How many team members can I invite?",
-      answer:
-        "You can invite up to 2 additional users on the Free plan. There is no limit on team members for the Premium plan.",
-    },
-    {
-      question:
-        "What is the maximum file upload size maximum file upload size?",
-      answer:
-        "No more than 2GB. All files in your account must fit your allotted storage space.",
-    },
-    {
-      question: "How do I reset my password?",
-      answer:
-        "Click “Forgot password” from the login page or “Change password” from your profile page. A reset link will be emailed to you.",
-    },
-    {
-      question: "Can I cancel my subscription?",
-      answer:
-        "Yes! Send us a message and we’ll process your request no questions asked.",
-    },
-    {
-      question: "Do you provide additional support?",
-      answer:
-        "Chat and email support is available 24/7. Phone lines are open during normal business hours.",
-    },
-    {
-      question: "How many team members can I invite?",
-      answer:
-        "You can invite up to 2 additional users on the Free plan. There is no limit on team members for the Premium plan.",
-    },
-  ];
-  const handleQuestionClick = (index) => {
-    if (activeQuestion === index) {
-      setActiveQuestion(null);
-    } else {
-      setActiveQuestion(index);
-    }
-  };
+  const CustomExpandIcon = ({ isActive }) => (
+    <Space>
+      {!isActive ? <PlusOutlined /> : <MinusOutlined />}
+    </Space>
+  );
   return (
-    <div class="wrapper">
-      <div class="accordion__wrapper">
-        <h1 class="title__accordion">FAQ</h1>
-        <div class="questions__accordions">
-          {data.map((item, index) => (
-            <div
-              key={index}
-              class={`question-answer__accordion ${
-                activeQuestion === index ? "active" : ""
-              }`}
-              onClick={() => handleQuestionClick(index)}
-            >
-              <div class="question">
-                <h3 class="title__question">{item.question}</h3>
-                <img src={arrowImage} alt="arrow" />
-              </div>
-              {activeQuestion === index && (
-                <div className="answer">{item.answer}</div>
-              )}
-            </div>
-          ))}
+    <div id="faq" className="block faqBlock centered">
+      <div className="container-fluid">
+        <div className="titleHolder">
+          <h2>Frequently Asked Questions</h2>
         </div>
+        <Collapse expandIconPosition="right" className="custom-collapse"
+          expandIcon={({ isActive }) => <CustomExpandIcon isActive={isActive} />}>
+          <Panel header="How to setup the theme?" key="1">
+            <p>Get your website up and running in no time with our user-friendly setup theme. Experience seamless customization options and enjoy a stress-free launch with our step-by-step guide. Upgrade your online presence with a professional look that's tailored to your brand.</p>
+          </Panel>
+
+          <Panel header="Can I change plan or cancel at any time?" key="2">
+            <p>We understand that plans can change, and that's why we offer a flexible cancelation policy for our customers. If you need to cancel your plan, please contact our support team for assistance. We'll do our best to make the process as smooth and hassle-free as possible.</p>
+          </Panel>
+          <Panel header="How to access through cloud?" key="3">
+            <p>Access your data anytime, anywhere with our cloud-based solution. No more limitations, enjoy seamless access to your information from any device with internet connection. Say goodbye to traditional setup, embrace the future of tech with us.</p>
+          </Panel>
+          <Panel header="Can I manage multiple task?" key="4">
+            <p>Maximize your productivity and efficiency with our app's ability to handle multiple tasks seamlessly. Say goodbye to juggling between multiple windows and programs and hello to effortless multitasking.</p>
+          </Panel>
+          <Panel header="How can I change my password?" key="5">
+            <p>Simplify your life with our easy-to-use password change feature. Securely update your password in just a few clicks, ensuring maximum protection for your data and peace of mind for you. Try it now!</p>
+          </Panel>
+          <Panel header="How to manage my account?" key="6">
+            <p>Manage all your accounts in one place with our streamlined and secure account management system. Easily update personal information, change passwords, and track account activity. Simplify your life and stay in control with our user-friendly platform.</p>
+          </Panel>
+
+        </Collapse>
       </div>
     </div>
   );

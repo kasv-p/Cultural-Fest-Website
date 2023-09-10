@@ -1,0 +1,207 @@
+.wrapper {
+  margin-top: 10%;
+  margin-bottom: 10%;
+  margin-left: 15%;
+  margin-right: 15%;
+  width: 70%;
+}
+.titleHolder {
+  text-align: center;
+  position: relative;
+  padding: 0 0 20px;
+  margin: 0 0 40px;
+  z-index: 2;
+}
+
+.titleHolder:after {
+  transform: translateX(-50%);
+  content: "";
+  background: #1890ff;
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  height: 3px;
+  width: 50px;
+}
+
+.titleHolder h2 {
+  font-size: 28px;
+  margin: 0;
+}
+
+.card_Container {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  margin: 40px 0;
+  overflow: auto;
+}
+
+.card-team {
+  position: relative;
+  width: 200px;
+  height: 300px;
+  margin: 20px;
+  overflow: hidden;
+  box-shadow: 0 30px 30px -20px rgb(238, 235, 235), inset 0 0 0 1000px #f3f3eb99;
+  border-radius: 15px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.imbBx {
+  width: 100%;
+  height: 100%;
+}
+
+.imbBx img {
+  width: 100%;
+  height: 100%;
+}
+
+.content {
+  position: absolute;
+  bottom: -120px;
+  width: 100%;
+  height: 120px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  backdrop-filter: blur(15px);
+  box-shadow: 0 -10px 10px rgba(0, 0, 0, 0.1);
+  border-radius: 15px;
+  transition: bottom 0.5s;
+  transition-delay: 0.65s;
+}
+
+.card-team:hover .content {
+  bottom: 0;
+  transition-delay: 0s;
+}
+
+.name {
+  text-transform: uppercase;
+  color: #fff;
+  letter-spacing: 2px;
+  font-weight: 500;
+  font-size: 18px;
+  text-align: center;
+  margin: 10px 0 10px;
+  line-height: 1.1em;
+  transition: 0.5s;
+  transition-delay: 0.6s;
+  opacity: 0;
+  transform: translateY(-20px);
+}
+
+.card-team:hover .name {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.card-team:hover .role {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.role {
+  font-size: 12px;
+  font-weight: 300;
+  text-align: center;
+  margin-bottom: 25px;
+  text-transform: initial;
+  transition: 0.5s;
+  transition-delay: 0.6s;
+  opacity: 0;
+  transform: translateY(-20px);
+}
+
+.sci {
+  position: relative;
+  bottom: 5px;
+  display: flex;
+}
+
+.logos {
+  list-style: none;
+  margin: 0 10px;
+  transform: translateY(30px);
+  transition: 0.5s;
+  opacity: 0;
+  transition-delay: calc(0.2s * var(--i));
+}
+
+.card-team:hover .logos {
+  transform: translateY(0);
+  opacity: 1;
+}
+
+.logos a {
+  color: #fff;
+  font-size: 24px;
+}
+
+@media screen and (max-width: 768px) {
+  .card-team {
+    width: 150px;
+    height: 280px;
+  }
+
+  .content {
+    bottom: -100px;
+    height: 100px;
+  }
+
+  .name {
+    margin-top: 30%;
+    font-size: 14px;
+  }
+
+  .role {
+    font-size: 10px;
+  }
+
+  .logos {
+    /* Adjust the transform property to position the logos appropriately on small screens */
+    transform: none; /* Remove the translateY transform */
+    margin-bottom: 20%; /* Adjust the margin for proper spacing */
+  }
+  .logos a {
+    font-size: 20px;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .card-team {
+    width: 200px;
+    height: 250px;
+  }
+
+  .content {
+    bottom: -90px;
+    height: 90px;
+  }
+
+  .name {
+    margin-top: 30%;
+    transform: none; /* Reset the transform */
+    font-size: 14px; /* Adjust font size for better fit */
+  }
+
+  .card-team:hover .name {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  .logos {
+    transform: none; /* Remove the translateY transform */
+    margin-bottom: 30%; /* Adjust the margin for proper spacing */
+  }
+  .logos a {
+    color: #fff;
+    font-size: 20px;
+  }
+}
