@@ -1,0 +1,45 @@
+#container{
+    margin: 8rem auto;
+    max-width: 1100vh;
+}
+
+.head{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    margin: 45px;
+}
+
+.vidBg{
+    margin-bottom: 20px;
+    overflow: hidden;
+}
+
+video{
+    max-width: 100%;
+    transition: transform 0.3s ease-in-out;
+    border-radius: 25px;
+}
+
+.video:hover{
+    transform: scale(1.1);
+}
+
+@media (min-width: 768px){
+    .head{
+        flex-direction: row;
+        justify-content: space-between;
+        text-align: left;
+    }
+
+    .vidBg{
+        margin-bottom: 0;
+        margin-right: 20px;
+        flex: 1;
+    }
+
+    .description{
+        flex: 2;
+    }
+}
