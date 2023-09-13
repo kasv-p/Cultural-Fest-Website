@@ -5,17 +5,19 @@ import Sponsors from "./components/Sponsors";
 import TeamSection from "./components/TeamSection";
 import Footer from "./components/Footer";
 import Events from "./components/Events";
-// import AboutSection from "./components/AboutSection";
+import AboutSection from "./components/AboutSection";
+import ScrollToTopBtn from "./components/ScrollToTopBtn";
 function App() {
   return (
     <div className="App">
       <NavBar />
-      {/* <AboutSection /> */}
+      <AboutSection />
       <Events />
       <Sponsors />
       <TeamSection />
       <Faqs />
       <Footer />
+      <ScrollToTopBtn />
     </div>
   );
 }

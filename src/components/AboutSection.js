@@ -1,39 +1,53 @@
-import React, { Fragment } from 'react'
-// import '../styles/aboutsection.css'
-import { Grid, Typography, Container } from '@mui/material';
-import ResponsiveVideo from 'react-responsive-video';
-// import 'react-responsive-video/styles.css';
-import footer from '../assets/images/footer.jpg'
+import React, { useEffect } from "react";
+import video from "../assets/videos/video.mp4";
+import '../styles/aboutsection.css';
+
 function AboutSection() {
+
+    useEffect(() => {
+        const video = document.getElementById('vid');
+        video.addEventListener('ended', function () {
+            this.currentTime = 0;
+            this.play();
+        })
+    }, [])
+
     return (
-        <div class="responsive-container-block bigContainer">
-            <div class="responsive-container-block Container bottomContainer">
-                <div class="ultimateImg">
-                    <img class="mainImg" src="https://workik-widget-assets.s3.amazonaws.com/widget-assets/images/mp4.svg" />
-                    <div class="purpleBox">
-                        <p class="purpleText">
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Eget purus lectus viverra in semper nec pretium mus.
-                        </p>
-                        <img class="stars" src="https://workik-widget-assets.s3.amazonaws.com/widget-assets/images/mp5.svg" />
-                    </div>
-                </div>
-                <div class="allText bottomText">
-                    <p class="text-blk headingText">
-                        About Me
-                    </p>
-                    <p class="text-blk subHeadingText">
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                    </p>
-                    <p class="text-blk description">
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fermentum pulvinar ullamcorper suspendisse ac eget. Pellentesque tempus leo in ullamcorper quis vestibulum ligula elementum ut.
-                    </p>
-                    <a class="explore">
-                        View Services
-                    </a>
-                </div>
+        <div id="container">
+            <div className="titleHolder">
+                <h2>About Us</h2>
             </div>
+            <header className="head">
+                <div className="vidBg">
+                    <video id="vid" controls autoPlay muted>
+                        <source src={video} type="video/mp4" />
+                        Unable to load video
+                    </video>
+                </div>
+                <div className="description">
+                    <p>
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit,
+                        sed do eiusmod tempor incididunt ut labore et dolore magna
+                        aliqua. Ut enim ad minim veniam, quis nostrud exercitation
+                        ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                        Duis aute irure dolor in reprehenderit in voluptate velit
+                        esse cillum dolore eu fugiat nulla pariatur. Excepteur sint
+                        occaecat cupidatat non proident, sunt in culpa qui officia
+                        deserunt mollit anim id est laborum. Lorem ipsum dolor sit amet, consectetur adipiscing elit,
+                        sed do eiusmod tempor incididunt ut labore et dolore magna
+                        aliqua. Ut enim ad minim veniam, quis nostrud exercitation
+                        ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                        Duis aute irure dolor in reprehenderit in voluptate velit
+                        esse cillum dolore eu fugiat nulla pariatur. Excepteur sint
+                        occaecat cupidatat non proident, sunt in culpa qui officia
+                        deserunt mollit anim id est laborum.occaecat cupidatat non proident, sunt in culpa qui officia
+                        deserunt mollit anim id est laborum.occaecat cupidatat non proident, sunt in culpa qui officia
+                        deserunt mollit anim id est laborum.
+                    </p>
+                </div>
+            </header>
         </div>
     )
 }
 
-export default AboutSection
+export default AboutSection;
