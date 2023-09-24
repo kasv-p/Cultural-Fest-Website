@@ -1,0 +1,19 @@
+video one dimension analysis
+
+backend
+---------
+
+donate portal 
+
+1. share my qr (security level)
+2. form - name, contact info, amount, bill generation (sign might be required)
+3. store all these in db
+4. one person - invoice id unique so can do any number of times
+5. display - dynamic number of all donations
+6. students (individual or collective) 
+7. individual 
+8. for collective need to have diff student names
+9. top elements  - if students -> show top 3 with name and money and next 2 just names
+10. milestones - posting into insta directly, else mail to gsca (need template for this)
+11. truncate access
+12. proof that payment is done
