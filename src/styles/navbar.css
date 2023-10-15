@@ -1,8 +1,20 @@
+body {
+  --nav-height: 65px;
+}
+
 .navbar-container {
-  position: relative;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  z-index: 1000; 
+  transition: transform 0.3s ease-in-out; 
 }
 
 .navbar {
   backdrop-filter: blur(10px);
-  transition: background-color 0.3s ease-in-out;
+}
+
+.nav--hidden {
+  transform: translateY(calc(-1 * var(--nav-height)));
+  box-shadow: none;
 }

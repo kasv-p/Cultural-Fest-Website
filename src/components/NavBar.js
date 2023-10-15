@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import {
   AppBar,
   Toolbar,
@@ -23,12 +23,37 @@ const NavBar = () => {
     setOpen(!open);
   };
 
+  useEffect(() => {
+    let lastScrollY = window.scrollY;
+    const nav = document.querySelector('.navbar-container');
+
+    const handleScroll = () => {
+      const currentScrollY = window.scrollY;
+      const scrollDirection = currentScrollY > lastScrollY ? 'down' : 'up';
+
+      if (scrollDirection === 'up') {
+        nav.classList.remove('nav--hidden');
+      } else {
+        nav.classList.add('nav--hidden');
+      }
+
+      lastScrollY = currentScrollY;
+    };
+
+    window.addEventListener('scroll', handleScroll);
+
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, []);
+
+
   return (
     <div className="navbar-container">
       <CssBaseline />
       <AppBar
         position="fixed"
-        className="navbar"
+        className={`navbar ${open ? 'navbar--open' : ''}`}
       >
         <Toolbar>
           <Typography variant="h6" component="div">
